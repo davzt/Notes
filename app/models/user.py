@@ -13,4 +13,3 @@ class UserORM(SQLAlchemyBaseUserTableUUID, BaseORM):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     notes: Mapped[set["NoteORM"] | None] = relationship(back_populates='user', lazy='selectin', collection_class=set)
-# , sa_relationship_kwargs={'lazy': 'selectin'}

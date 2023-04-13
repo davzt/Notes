@@ -15,7 +15,6 @@ class NoteBase(BaseModel):
 
 
 class NoteCreate(NoteBase):
-    # user_id: UUID
     pass
 
 

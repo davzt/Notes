@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Any, Annotated, Optional
+from typing import Annotated, Optional
 from uuid import UUID
 
 from fastapi import APIRouter, Depends, HTTPException, Response, status
@@ -19,26 +19,6 @@ def get_note_router() -> APIRouter:
     router = APIRouter(
         tags=['notes']
     )
-
-    # get_user_manager = fastapi_users.get_user_manager
-    # authenticator = fastapi_users.authenticator
-    #
-    # get_current_active_user = authenticator.current_user(
-    #     active=True, verified=requires_verification
-    # )
-    # get_current_superuser = authenticator.current_user(
-    #     active=True, verified=requires_verification, superuser=True
-    # )
-
-    # async def get_user_or_404(
-    #         id: Any,
-    #         user_manager: BaseUserManager[models.UP, models.ID] = Depends(get_user_manager),
-    # ) -> models.UP:
-    #     try:
-    #         parsed_id = user_manager.parse_id(id)
-    #         return await user_manager.get(parsed_id)
-    #     except (exceptions.UserNotExists, exceptions.InvalidID) as e:
-    #         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND) from e
 
     @router.get(
         '/me/notes',
