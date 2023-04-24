@@ -1,4 +1,4 @@
-from pydantic import BaseSettings, PostgresDsn
+from pydantic import AnyHttpUrl, BaseSettings, PostgresDsn
 
 
 class Settings(BaseSettings):
@@ -7,6 +7,8 @@ class Settings(BaseSettings):
 
     PORT: int
     URL_PREFIX: str = '/notes/api'
+
+    CORS_ORIGINS: list[AnyHttpUrl] = []
 
     USE_OAUTH2_AUTHORIZATION: bool
     SECRET_KEY: str
